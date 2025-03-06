@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "myString"></p>    
+
+    <!-- <script>
+        var xmlText, xmlDoc, xmlParser;
+        xmlText = "<student>" +
+            "<name>onur</name>" +
+            "<surname>kula</surname>" +
+            "</student>";
+        
+       xmlParser = new DOMParser();
+       //DOMParser(): DOMParser sınıfı, HTML veya XML verisini bir string olarak alıp bir DOM yapısına dönüştürmek için kullanılır.
+       xmlDoc = xmlParser.parseFromString(xmlText, "text/xml");
+       document.getElementById('myString').innerHTML = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;     
+        //etElementsByTagName:metodu, belirtilen etiket adına sahip tüm öğeleri içeren bir HTMLCollection döndürür. HTMLCollection, array benzeri bir koleksiyondur ve üzerinde döngü (loop) yapılabilir. 
+    </script> -->
+    <script>
+        var xmlText, xmlDoc, xmlParser;
+    
+        // XML verisini bir string olarak tanımlıyoruz
+        xmlText = "<student>" +
+            "<name>onur</name>" +    // Öğrencinin adı
+            "<surname>kula</surname>" + // Öğrencinin soyadı
+            "</student>";
+    
+        // DOMParser sınıfını kullanarak XML verisini DOM yapısına dönüştürmek için bir xmlParser nesnesi oluşturuyoruz
+        xmlParser = new DOMParser();
+        // parseFromString() metoduyla XML string'ini XML DOM'a dönüştürüyoruz
+        xmlDoc = xmlParser.parseFromString(xmlText, "text/xml");
+    
+        // 'myString' id'sine sahip öğenin içeriğini, XML dokümanından 'name' etiketinin içindeki değeri alarak ayarlıyoruz
+        document.getElementById('myString').innerHTML = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;     
+        // getElementsByTagName("name") metoduyla 'name' etiketini buluyoruz.
+        // childNodes[0].nodeValue ile 'name' etiketinin metin değerini alıyoruz ve bu değeri HTML öğesine ekliyoruz.
+    </script>
+</body>
+</html>

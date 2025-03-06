@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="keywords" content="nesne, obje, class, object" />
+        <title>Nesneler Constructorlar</title>        
+
+    </head>
+
+    <body>
+        <p id="myObject"></p>
+        
+        <script>
+            function Car(markaPar, renkPar, sahipPar)        // Constructor metod
+            {
+                this.Marka = markaPar;   // bu nesnenin Marka adlı property'sini markaPar parametresinden oku
+                this.Renk = renkPar; // bu nesnenin Renk adlı property'sini renkPar parametresinden oku
+                this.Sahip = sahipPar; // bu nesnenin Sahip adlı property'sini sahipPar parametresinden oku
+                this.Calistir = function()//içinde kullandığımız işlemin içerisinde nesne çağırıcaksak func bu şekilde nesne gibi tanımlanmalıdır.
+                {
+                    return this.Marka + " Çalıştı!";//this.Marka: bu nesneyi çağıra bilmek için yazılmış func.bunu içerisinde işlemde döndürebilirdik.geliştirebilir.
+                }
+            }        
+
+            // eski kullanım şu şekilde idi : const myCar = new Object();
+            // Parametreli constructor kullanarak yeni bir myCar nesnesi oluştur            
+            const myCar = new Car("Mercedes", "Siyah", "Onur");    
+
+            let myString = "Araba : " + myCar.Marka + " " + myCar.Renk + " " + myCar.Sahip + "<br/>" + myCar.Calistir();
+
+            document.getElementById('myObject').innerHTML = myString;
+            
+        </script>
+        <!-- // constructor: sınıfın yapıcı metotlara bellekle yer ayırarak işlevlerini gerçekleştirir.sınıf ve constructor aynı isimde olmalıdır. -->
+
+    </body>
+
+</html>

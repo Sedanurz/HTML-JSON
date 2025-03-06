@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="keywords" content="nesne, obje, class, object" />
+        <title>Nesneler Metodlar</title>        
+        <script language="JavaScript">
+            function loadObject()
+            {
+                  /* 
+                  new Object() şeklinde de yazılabilir ama generic nesneler için alt kısımdaki kod daha çok tercih edilir  
+                  const Person = new Object();
+                  Person.Ad = "Fırat";
+                  */  
+                  const Person = {
+                        Ad : "Fırat",
+                        Sehir : "İstanbul",
+                        Bolge : function()
+                        {
+                            if (this.Sehir=="İstanbul")
+                            {
+                                return "Marmara";
+                            }
+                            else
+                            {   
+                                return "Bilinmiyor";    
+                            }
+                        }
+                    }; 
+                
+                    let myString = Person.Ad + "<br/>" + Person.Sehir + "<br/>" + Person.Bolge();
+                    document.getElementById('myObject').innerHTML = myString;
+
+            }
+
+        </script>
+    </head>
+
+    <body onload="loadObject();">
+        <p id="myObject"></p>
+
+    </body>
+
+</html>

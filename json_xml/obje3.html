@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="keywords" content="nesne, obje, class, object" />
+        <title>Nesneler 2. Kısım</title>        
+        <script language="JavaScript">
+            function loadObject()
+            {
+                  const person2 = {
+                        FirstName : "Fırat",
+                        LastName : "Kaya",
+                        Classroom : "Sabah Grubu",
+                        Address : 
+                        {
+                            text : "1 Sok. No:2 D:2",
+                            postalCode : "35500",
+                            city : "İzmir"        
+                        }                         
+                    }; 
+
+                    
+                    var myList = JSON.stringify(person2);
+
+                    document.getElementById('myObject').innerHTML = myList;
+
+            }
+
+        </script>
+    </head>
+
+    <body onload="loadObject();">
+        <p id="myObject"></p>
+
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+     <script>
+         const kur = `{
+            "Tarih_Date": {
+		"Currency": [
+			{
+				"Unit": "1",
+				"Isim": "ABD DOLARI",
+				"CurrencyName": "US DOLLAR",
+				"ForexBuying": "36.4011",
+				"ForexSelling": "36.4667",
+				"BanknoteBuying": "36.3756",
+				"BanknoteSelling": "36.5214",
+				"CrossRateUSD": "",
+				"CrossRateOther": "",
+				"_CrossOrder": "0",
+				"_Kod": "USD",
+				"_CurrencyCode": "USD"
+			}
+            ]
+            }
+            }`
+
+         // myJSONObject yukarıdaki JSON string'ini JSON.parse metodu ile objeye dönüştürülmüş olarak tutar
+         // ve JSON dosyasının içindeki alan ve alt kısımları sorgulayabilir hale getirir.
+
+         const kur_parse = JSON.parse(kur);  
+         //JSON:sınıf / parse:method/ kur:nesne
+         document.getElementById('demo').innerHTML = kur_parse.Tarih_Date.Currency[0].Isim+"-->"+kur_parse.Tarih_Date.Currency[0].ForexBuying;
+     </script>   
+</body>
+</html>
